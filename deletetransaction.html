@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>View Transactions</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<style>
+			table th,
+			table td,
+			h1 {
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#delete-row").click(function() {
+					$("table tbody")
+						.find('input[name="select"]')
+						.each(function() {
+							if ($(this).is(":checked")) {
+								$(this)
+									.parents("tr")
+									.remove();
+							}
+						});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<img src="bg-image1.jpg" class="bg-image" />
+		<div class="container">
+			<div class="view-trans1">
+				<h1 style="color:#61B531">Transactions</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Select</th>
+							<th>Customer Name</th>
+							<th>Total Amount</th>
+							<th>Paid Amount</th>
+							<th>Fee Amount</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox" name="select" /></td>
+							<td>Customer-1</td>
+							<td>4,60,000</td>
+							<td>40,000</td>
+							<td>500</td>
+							<td>18/01/2018</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="select" /></td>
+							<td>Customer-2</td>
+							<td>1,80,000</td>
+							<td>80,000</td>
+							<td>500</td>
+							<td>21/01/2018</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="select" /></td>
+							<td>Customer-3</td>
+							<td>3,00,000</td>
+							<td>1,00,000</td>
+							<td>500</td>
+							<td>23/01/2018</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="select" /></td>
+							<td>Customer-4</td>
+							<td>90,000</td>
+							<td>10,000</td>
+							<td>200</td>
+							<td>28/01/2018</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="select" /></td>
+							<td>Customer-5</td>
+							<td>10,00,000</td>
+							<td>4,00,000</td>
+							<td>1000</td>
+							<td>16/02/2018</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="back1">
+				<table class="table borderless">
+					<tr>
+						<td>
+							<button class="btn btn-success" id="delete-row">
+								Delete
+							</button>
+						</td>
+						<td>
+							<a class="btn btn-success" href="home.html">Back</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

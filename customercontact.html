@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>View Customers</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type='text/javascript'>
+function send(){
+alert("mail sent to customer");
+}
+</script>
+</head>
+<body>
+<img src="bg-image1.jpg" class="bg-image">
+<div class="container">
+<div class="mail-customer">
+
+<table class="table borderless" name="t1">
+<th align="left">Select Customer</th>
+<tr align="left">
+<td><select class="btn btn-default" id="customers" form="Customer">
+<option value="customer-1">Customer-1</option>
+<option value="customer-2">Customer-2</option>
+<option value="customer-3">Customer-3</option>
+<option value="customer-4">Customer-4</option>
+<option value="customer-5">Customer-5</option>
+</select>
+</td>
+</tr>
+<tr><td>
+<input type="text" name="message" style="height:80px; width:250px" placeholder="Write message here" class="message" required="type message">
+</td></tr>
+<tr align="center">
+<td><button class="btn btn-success" onclick="send()">Send Email</button>
+</FORM> </td>
+</tr>
+</table>
+
+</div>
+<div class="back"><table class="table borderless">
+<tr>
+<td><a class="btn btn-success" href="home.html">Back</a></td>
+</tr>
+</table></div>
+</div>
+</body>
+</html>
