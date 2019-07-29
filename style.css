@@ -1,0 +1,12 @@
+.body {
+	min-height: 100%;
+}
+.bg-image {
+	/*background-image: url("login1.png");*/
+}
+.error-msg {
+	color: red;
+}
+.btn {
+	cursor: pointer;
+}

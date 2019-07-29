@@ -1,55 +1,109 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Home</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-<img src="bg-image1.jpg" class="bg-image">
-<div class="container">
-<div class="home-box">
-<h3>Transactions</h3>
-<table class="table borderless">
-<tr align="center">
-<td><a class="btn btn-success" href="view-transactions.html">View Transactions</a></td>
-</tr>
-<tr align="center">
-<td><a class="btn btn-success" href="addtransaction.html">Add Transaction</a></td>
-</tr>
-<tr>
-<td><a class="btn btn-success" href="deletetransaction.html">Remove Transaction</a></td>
-</tr align="center">
-</table>
-<h3>Customers</h3>
-<table class="table borderless">
-<tr align="center">
-<td><a class="btn btn-success" href="view-customers.html">View Customers</a></td>
-</tr>
-<tr align="center">
-<td><a class="btn btn-success" href="addcustomer.html">Add Customer</a></td>
-</tr>
-<tr align="center">
-<td><a class="btn btn-success" href="deletecustomer.html">Remove Customer</a></td>
-</tr>
-</table>
+	<head>
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		/>
+		<script type="text/javascript" src="main.js"></script>
+		<script>
+			$(document).ready(function() {
+				$(".dropdown-submenu a.test").on("click", function(e) {
+					$(this)
+						.next("ul")
+						.toggle();
+					e.stopPropagation();
+					e.preventDefault();
+				});
+				if (sessionStorage.getItem("loggedIn")) {
+					window.location = "home.html";
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div class="bg-image col-lg-12">
+			<div class="col-lg-offset-4" />
+			<div class="login-box col-lg-4">
+				<img src="" class="login-image" />
 
-<h3>Contact</h3>
-<table class="table borderless">
-<tr align="center">
-<td><a class="btn btn-success" href="headofficecontact.html">Mail Head Office</a></td>
-</tr>
-<tr align="center">
-<td><a class="btn btn-success" href="customercontact.html">Mail to Customers</a></td>
-</tr>
-<tr align="center">
-<td><a class="btn btn-success" href="login.html">Log Out</a></td>
-</tr>
-</table>
-</div>
-</div>
-</body>
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a data-toggle="tab" href="#head-office"
+							><b style="color:#800040;">Head-office Login</b></a
+						>
+					</li>
+					<li>
+						<a data-toggle="tab" href="#branch"
+							><b style="color:#800040;">Branch Login</b></a
+						>
+					</li>
+				</ul>
+
+				<div class="tab-content">
+					<div id="head-office" class="tab-pane fade in active">
+						<br /><br />
+						<form>
+							<p>Employee ID</p>
+							<input
+								type="text"
+								name="Employee ID"
+								id="headeid"
+								placeholder="Employee ID"
+							/>
+							<p>Password</p>
+							<input
+								type="password"
+								name="password"
+								id="headpass"
+								placeholder="password"
+							/>
+							<input
+								type="button"
+								name="submit"
+								value="Head Office Login"
+								onclick="login(0)"
+							/>
+							<br />
+							<a href="#">Forgot password</a>
+						</form>
+						<div class="error-msg" id="errText2"></div>
+					</div>
+
+					<div id="branch" class="tab-pane fade">
+						<br /><br />
+						<form>
+							<p>Employee ID</p>
+							<input
+								type="text"
+								id="brancheid"
+								name="Employee ID"
+								placeholder="Employee ID"
+							/>
+							<p>Password</p>
+							<input
+								type="password"
+								name="password"
+								id="branchpass"
+								placeholder="password"
+							/>
+							<input
+								type="button"
+								name="submit"
+								value="Branch Login"
+								onclick="login(1)"
+							/>
+							<br />
+							<a href="#">Forgot password</a>
+						</form>
+						<div class="error-msg" id="errText1"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
