@@ -13,6 +13,7 @@
 			rel="stylesheet"
 			href="https://www.w3schools.com/w3css/4/w3.css"
 		/>
+		<script type="text/javascript" src="main.js"></script>
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css?family=Lato"
@@ -31,6 +32,7 @@
 			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
 			crossorigin="anonymous"
 		></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 		<script
 			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
@@ -51,6 +53,7 @@
 								class="btn btn-default"
 								type="text"
 								name="Name"
+								id="Name"
 								placeholder="Name"
 							/>
 						</td>
@@ -61,6 +64,7 @@
 								class="btn btn-default"
 								type="text"
 								name="Email"
+								id="Email"
 								placeholder="EMail"
 							/>
 						</td>
@@ -71,6 +75,8 @@
 								class="btn btn-default"
 								type="text"
 								placeholder="Branch"
+								name="Branch"
+								id="Branch"
 							/>
 						</td>
 					</tr>
@@ -80,6 +86,7 @@
 								class="btn btn-default"
 								type="number"
 								name="Contact"
+								id="Contact"
 								placeholder="Contact"
 							/>
 						</td>
@@ -90,6 +97,7 @@
 								class="btn btn-default"
 								type="date"
 								name="DOB"
+								id="DOB"
 								placeholder="DOB"
 							/>
 						</td>
@@ -100,19 +108,25 @@
 								class="btn btn-default"
 								type="number"
 								name="Dues"
+								id="Dues"
 								placeholder="Dues"
 							/>
 						</td>
 					</tr>
-
+					<tr>
+						<td>
+							<div class="error-msg" id="customerError"></div>
+						</td>
+					</tr>
 					<tr align="center">
 						<td>
-							<a
+							<button
+								onclick="addCustomer()"
 								class="btn btn-success"
-								href="view-customers.html"
 								value="Add Row"
-								>ADD</a
 							>
+								ADD
+							</button>
 						</td>
 					</tr>
 				</table>
